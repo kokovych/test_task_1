@@ -1,0 +1,60 @@
+Test I
+
+                                           Expected time to complete: 1-2 hours
+
+-------------------------------------------------------------------------------
+  PROCESS
+-------------------------------------------------------------------------------
+Read the nested category object from the given JSON file. 
+Convert it to a list of category objects with the following attributes.
+    id: Id of the current category
+    name: Name of the current category
+    ids: list of all parent + current category id in hierarchical order.
+    tree: Combine the names of parent and current categories using ' > '
+    level: Nesting level of the current category
+    parent_id: immediate parent of the current category 
+Use python 3.
+Write output to a JSON file.
+
+-------------------------------------------------------------------------------
+  INPUT
+-------------------------------------------------------------------------------
+Please see the attached categories.json file. The file contains nested 
+categories up to 3 levels. Please load the file as input.
+
+
+-------------------------------------------------------------------------------
+  OUTPUT
+-------------------------------------------------------------------------------
+Flatten the nested object to a list of category objects. 
+eg,
+
+[
+    {
+        "id": 2144,
+        "name": "Home Appliances",
+        "ids": [2144]
+        "tree" : "Home Appliances",
+        "level": 1
+        "parent_id": null
+    },
+    {
+        "id": 2209,
+        "name": "Laundry",
+        "ids": [2144, 2209],
+        "tree" : "Home Appliances > Laundry",
+        "level": 2,
+        "parent_id": 2144
+    },
+    {
+        "id": 1230,
+        "name": "Dryers",
+        "ids": [2144, 2209, 1230],
+        "tree" : "Home Appliances > Laundry > Dryers",
+        "level": 3,
+        "parent_id": 2209
+    },
+...
+...
+]
+
